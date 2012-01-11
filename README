@@ -1,7 +1,7 @@
 (Scroll down for latest updates)
 *** Quick Summary ***
-Decrypts MD5 and SHA-1 hashes up to 5 characters long.
-Do not allow numbers or uppercase unless necessary. Time taken will increase exponentially.
+Decrypts MD5 and SHA-1 hashes up to 6 characters long. (the original string that was hashed is 6 characters or less)
+Do not allow numbers or uppercase unless necessary. Time taken will increase greatly.
 
 *** How do I get a hash to decrypt? ***
 What you want to decrypt is up to you. However, these two hashes are quite widely used across the web.
@@ -20,5 +20,11 @@ This is a simple hash that can be solved quickly, try it out!
 I'm open to any feature suggestions/bug reports so feel free to contact me.
 Email: gedarovich@hotmail.com
 
-*** Latest Updates (1/10/12)***
-- Released
+*** Latest Updates (1/11/12)***
+- Can now solve up to 6 character-long hashed strings
+- Allows starting from a given string
+	- This can be used to save time or for parallel computing
+- Now displays time taken upon completion
+- Checks for null string when starting from scratch
+- Proper error handling and reporting implemented
+- Numerous bug fixes
