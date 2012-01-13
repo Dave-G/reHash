@@ -3,7 +3,7 @@
 # Created by David Gedarovich
 # http://www.github.com/Dave-G
 # gedarovich@hotmail.com
-# Updated 1/11/12
+# Updated 1/13/12
 
 # Imported libraries
 import os
@@ -13,7 +13,7 @@ import math
 import sys
 
 # Main function
-def reHash(x, y):
+def decrypt(x, y):
 	# Variables corresponding to string indices, counter, starting point, completion, and starting time
 	i = 0
 	ii = 0
@@ -69,7 +69,6 @@ def reHash(x, y):
 			print "String not in list, ignoring."
 			os.system('pause')
 	# First check null string
-	# SHA-1
 	if (hashType == 'sha1'):
 		if (hashlib.sha1('').hexdigest() == x):
 			os.system('cls')
@@ -79,11 +78,10 @@ def reHash(x, y):
 			if (((time.time() - startTime) % 60) < 1):
 				print "Time Taken: Less then 1 second"
 			else:
-				print "Time Taken: " + str(int(math.floor((time.time() - startTime) / 60))) + " minutes " + str(int((time.time() - startTime) % 60)) + " seconds"
+				print "Time Taken: " + str(int(math.floor(((time.time() - startTime) / 60) / 60))) + " hours " + str(int((math.floor((time.time() - startTime) / 60)) % 60)) + " minutes " + str(int((time.time() - startTime) % 60)) + " seconds"
 			complete = 1
 			# To skip the next check
 			startPoint = 99
-	# MD5
 	if (hashType == 'md5'):
 		if (hashlib.md5('').hexdigest() == x):
 			os.system('cls')
@@ -93,7 +91,7 @@ def reHash(x, y):
 			if (((time.time() - startTime) % 60) < 1):
 				print "Time Taken: Less then 1 second"
 			else:
-				print "Time Taken: " + str(int(math.floor((time.time() - startTime) / 60))) + " minutes " + str(int((time.time() - startTime) % 60)) + " seconds"
+				print "Time Taken: " + str(int(math.floor(((time.time() - startTime) / 60) / 60))) + " hours " + str(int((math.floor((time.time() - startTime) / 60)) % 60)) + " minutes " + str(int((time.time() - startTime) % 60)) + " seconds"
 			complete = 1
 			# To skip the next check
 			startPoint = 99
@@ -114,7 +112,7 @@ def reHash(x, y):
 					if (((time.time() - startTime) % 60) < 1):
 						print "Time Taken: Less then 1 second"
 					else:
-						print "Time Taken: " + str(int(math.floor((time.time() - startTime) / 60))) + " minutes " + str(int((time.time() - startTime) % 60)) + " seconds"
+						print "Time Taken: " + str(int(math.floor(((time.time() - startTime) / 60) / 60))) + " hours " + str(int((math.floor((time.time() - startTime) / 60)) % 60)) + " minutes " + str(int((time.time() - startTime) % 60)) + " seconds"
 					complete = 1
 					break
 				else:
@@ -128,7 +126,7 @@ def reHash(x, y):
 					if (((time.time() - startTime) % 60) < 1):
 						print "Time Taken: Less then 1 second"
 					else:
-						print "Time Taken: " + str(int(math.floor((time.time() - startTime) / 60))) + " minutes " + str(int((time.time() - startTime) % 60)) + " seconds"
+						print "Time Taken: " + str(int(math.floor(((time.time() - startTime) / 60) / 60))) + " hours " + str(int((math.floor((time.time() - startTime) / 60)) % 60)) + " minutes " + str(int((time.time() - startTime) % 60)) + " seconds"
 					complete = 1
 					break
 				else:
@@ -151,7 +149,7 @@ def reHash(x, y):
 					if (((time.time() - startTime) % 60) < 1):
 						print "Time Taken: Less then 1 second"
 					else:
-						print "Time Taken: " + str(int(math.floor((time.time() - startTime) / 60))) + " minutes " + str(int((time.time() - startTime) % 60)) + " seconds"
+						print "Time Taken: " + str(int(math.floor(((time.time() - startTime) / 60) / 60))) + " hours " + str(int((math.floor((time.time() - startTime) / 60)) % 60)) + " minutes " + str(int((time.time() - startTime) % 60)) + " seconds"
 					complete = 1
 					break
 				else:
@@ -168,7 +166,7 @@ def reHash(x, y):
 					if (((time.time() - startTime) % 60) < 1):
 						print "Time Taken: Less then 1 second"
 					else:
-						print "Time Taken: " + str(int(math.floor((time.time() - startTime) / 60))) + " minutes " + str(int((time.time() - startTime) % 60)) + " seconds"
+						print "Time Taken: " + str(int(math.floor(((time.time() - startTime) / 60) / 60))) + " hours " + str(int((math.floor((time.time() - startTime) / 60)) % 60)) + " minutes " + str(int((time.time() - startTime) % 60)) + " seconds"
 					complete = 1
 					break
 				else:
@@ -195,7 +193,7 @@ def reHash(x, y):
 					if (((time.time() - startTime) % 60) < 1):
 						print "Time Taken: Less then 1 second"
 					else:
-						print "Time Taken: " + str(int(math.floor(((time.time() - startTime) / 60) / 60))) + " hours " + str(int(math.floor((time.time() - startTime) / 60))) + " minutes " + str(int((time.time() - startTime) % 60)) + " seconds"
+						print "Time Taken: " + str(int(math.floor(((time.time() - startTime) / 60) / 60))) + " hours " + str(int((math.floor((time.time() - startTime) / 60)) % 60)) + " minutes " + str(int((time.time() - startTime) % 60)) + " seconds"
 					complete = 1
 					break
 				else:
@@ -215,7 +213,7 @@ def reHash(x, y):
 					if (((time.time() - startTime) % 60) < 1):
 						print "Time Taken: Less then 1 second"
 					else:
-						print "Time Taken: " + str(int(math.floor(((time.time() - startTime) / 60) / 60))) + " hours " + str(int(math.floor((time.time() - startTime) / 60))) + " minutes " + str(int((time.time() - startTime) % 60)) + " seconds"
+						print "Time Taken: " + str(int(math.floor(((time.time() - startTime) / 60) / 60))) + " hours " + str(int((math.floor((time.time() - startTime) / 60)) % 60)) + " minutes " + str(int((time.time() - startTime) % 60)) + " seconds"
 					complete = 1
 					break
 				else:
@@ -246,7 +244,7 @@ def reHash(x, y):
 					if (((time.time() - startTime) % 60) < 1):
 						print "Time Taken: Less then 1 second"
 					else:
-						print "Time Taken: " + str(int(math.floor(((time.time() - startTime) / 60) / 60))) + " hours " + str(int(math.floor((time.time() - startTime) / 60))) + " minutes " + str(int((time.time() - startTime) % 60)) + " seconds"
+						print "Time Taken: " + str(int(math.floor(((time.time() - startTime) / 60) / 60))) + " hours " + str(int((math.floor((time.time() - startTime) / 60)) % 60)) + " minutes " + str(int((time.time() - startTime) % 60)) + " seconds"
 					complete = 1
 					break
 				else:
@@ -269,7 +267,7 @@ def reHash(x, y):
 					if (((time.time() - startTime) % 60) < 1):
 						print "Time Taken: Less then 1 second"
 					else:
-						print "Time Taken: " + str(int(math.floor(((time.time() - startTime) / 60) / 60))) + " hours " + str(int(math.floor((time.time() - startTime) / 60))) + " minutes " + str(int((time.time() - startTime) % 60)) + " seconds"
+						print "Time Taken: " + str(int(math.floor(((time.time() - startTime) / 60) / 60))) + " hours " + str(int((math.floor((time.time() - startTime) / 60)) % 60)) + " minutes " + str(int((time.time() - startTime) % 60)) + " seconds"
 					complete = 1
 					break
 				else:
@@ -304,7 +302,7 @@ def reHash(x, y):
 					if (((time.time() - startTime) % 60) < 1):
 						print "Time Taken: Less then 1 second"
 					else:
-						print "Time Taken: " + str(int(math.floor(((time.time() - startTime) / 60) / 60))) + " hours " + str(int(math.floor((time.time() - startTime) / 60))) + " minutes " + str(int((time.time() - startTime) % 60)) + " seconds"
+						print "Time Taken: " + str(int(math.floor(((time.time() - startTime) / 60) / 60))) + " hours " + str(int((math.floor((time.time() - startTime) / 60)) % 60)) + " minutes " + str(int((time.time() - startTime) % 60)) + " seconds"
 					complete = 1
 					break
 				else:
@@ -330,7 +328,7 @@ def reHash(x, y):
 					if (((time.time() - startTime) % 60) < 1):
 						print "Time Taken: Less then 1 second"
 					else:
-						print "Time Taken: " + str(int(math.floor(((time.time() - startTime) / 60) / 60))) + " hours " + str(int(math.floor((time.time() - startTime) / 60))) + " minutes " + str(int((time.time() - startTime) % 60)) + " seconds"
+						print "Time Taken: " + str(int(math.floor(((time.time() - startTime) / 60) / 60))) + " hours " + str(int((math.floor((time.time() - startTime) / 60)) % 60)) + " minutes " + str(int((time.time() - startTime) % 60)) + " seconds"
 					complete = 1
 					break
 				else:
@@ -369,7 +367,7 @@ def reHash(x, y):
 					if (((time.time() - startTime) % 60) < 1):
 						print "Time Taken: Less then 1 second"
 					else:
-						print "Time Taken: " + str(int(math.floor(((time.time() - startTime) / 60) / 60))) + " hours " + str(int(math.floor((time.time() - startTime) / 60))) + " minutes " + str(int((time.time() - startTime) % 60)) + " seconds"
+						print "Time Taken: " + str(int(math.floor(((time.time() - startTime) / 60) / 60))) + " hours " + str(int((math.floor((time.time() - startTime) / 60)) % 60)) + " minutes " + str(int((time.time() - startTime) % 60)) + " seconds"
 					complete = 1
 					break
 				else:
@@ -398,7 +396,7 @@ def reHash(x, y):
 					if (((time.time() - startTime) % 60) < 1):
 						print "Time Taken: Less then 1 second"
 					else:
-						print "Time Taken: " + str(int(math.floor(((time.time() - startTime) / 60) / 60))) + " hours " + str(int(math.floor((time.time() - startTime) / 60))) + " minutes " + str(int((time.time() - startTime) % 60)) + " seconds"
+						print "Time Taken: " + str(int(math.floor(((time.time() - startTime) / 60) / 60))) + " hours " + str(int((math.floor((time.time() - startTime) / 60)) % 60)) + " minutes " + str(int((time.time() - startTime) % 60)) + " seconds"
 					complete = 1
 					break
 				else:
@@ -450,7 +448,7 @@ if (input3 == 'y'):
 input4 = raw_input("Begin from a specific string?(leave blank to start from scratch): ")
 # Decrypt and show answer with error handling
 try:
-	reHash(input, input4)
+	decrypt(input, input4)
 except:
 	os.system('cls')
 	print "Fatal Error!" 
