@@ -99,14 +99,17 @@ def decrypt(x, y):
 		c += 1
 	# 1 character case (first check null string)
 	if (startPoint == 0):
+		skip_print = 0
 		while (i < len(alpha)):
 			c += 1
-			os.system('cls')
-			print "Decrypting: " + x
+			if skip_print == 0:
+				os.system('cls')
+				print "Decrypting: " + x
 			# SHA-1
 			if (hashType == 'sha1'):
-				print "Trying: " + hashlib.sha1(alpha[i]).hexdigest() + " (" + alpha[i] + ")"
-				print "Combinations Tried: " + str(c)
+				if skip_print == 0:
+					print "Trying: " + hashlib.sha1(alpha[i]).hexdigest() + " (" + alpha[i] + ")"
+					print "Combinations Tried: " + str(c)
 				if (hashlib.sha1(alpha[i]).hexdigest() == x):
 					print "Success! Decrypted to: " + alpha[i]
 					if (((time.time() - startTime) % 60) < 1):
@@ -119,8 +122,9 @@ def decrypt(x, y):
 					i += 1
 			# MD5
 			elif (hashType == 'md5'):
-				print "Trying: " + hashlib.md5(alpha[i]).hexdigest() + " (" + alpha[i] + ")"
-				print "Combinations Tried: " + str(c)
+				if skip_print == 0:
+					print "Trying: " + hashlib.md5(alpha[i]).hexdigest() + " (" + alpha[i] + ")"
+					print "Combinations Tried: " + str(c)
 				if (hashlib.md5(alpha[i]).hexdigest() == x):
 					print "Success! Decrypted to: " + alpha[i]
 					if (((time.time() - startTime) % 60) < 1):
@@ -131,19 +135,24 @@ def decrypt(x, y):
 					break
 				else:
 					i += 1
+			skip_print += 1
+			skip_print %= 10000
 		if (complete == 0):
 			startPoint = 1
 			i = 0
 	# 2 character case
 	if (startPoint == 1):
+		skip_print = 0
 		while (ii < len(alpha)):
 			c += 1
-			os.system('cls')
-			print "Decrypting: " + x
+			if skip_print == 0:
+				os.system('cls')
+				print "Decrypting: " + x
 			# SHA-1
 			if (hashType == 'sha1'):
-				print "Trying: " + hashlib.sha1(alpha[ii] + alpha[i]).hexdigest() + " (" + alpha[ii] + alpha[i] + ")"
-				print "Combinations Tried: " + str(c)
+				if skip_print == 0:
+					print "Trying: " + hashlib.sha1(alpha[ii] + alpha[i]).hexdigest() + " (" + alpha[ii] + alpha[i] + ")"
+					print "Combinations Tried: " + str(c)
 				if (hashlib.sha1(alpha[ii] + alpha[i]).hexdigest() == x):
 					print "Success! Decrypted to: " + alpha[ii] + alpha[i]
 					if (((time.time() - startTime) % 60) < 1):
@@ -159,8 +168,9 @@ def decrypt(x, y):
 						ii += 1
 			# MD5
 			elif (hashType == 'md5'):
-				print "Trying: " + hashlib.md5(alpha[ii] + alpha[i]).hexdigest() + " (" + alpha[ii] + alpha[i] + ")"
-				print "Combinations Tried: " + str(c)
+				if skip_print == 0:
+					print "Trying: " + hashlib.md5(alpha[ii] + alpha[i]).hexdigest() + " (" + alpha[ii] + alpha[i] + ")"
+					print "Combinations Tried: " + str(c)
 				if (hashlib.md5(alpha[ii] + alpha[i]).hexdigest() == x):
 					print "Success! Decrypted to: " + alpha[ii] + alpha[i]
 					if (((time.time() - startTime) % 60) < 1):
@@ -174,20 +184,25 @@ def decrypt(x, y):
 					if (i == len(alpha)):
 						i = 0
 						ii += 1
+			skip_print += 1
+			skip_print %= 10000
 		if (complete == 0):
 			i = 0
 			ii = 0
 			startPoint = 2
 	# 3 character case
 	if (startPoint == 2):
+		skip_print = 0
 		while (iii < len(alpha)):
 			c += 1
-			os.system('cls')
-			print "Decrypting: " + x
+			if skip_print == 0:
+				os.system('cls')
+				print "Decrypting: " + x
 			# SHA-1
 			if (hashType == 'sha1'):
-				print "Trying: " + hashlib.sha1(alpha[iii] + alpha[ii] + alpha[i]).hexdigest() + " (" + alpha[iii] + alpha[ii] + alpha[i] + ")"
-				print "Combinations Tried: " + str(c)
+				if skip_print == 0:
+					print "Trying: " + hashlib.sha1(alpha[iii] + alpha[ii] + alpha[i]).hexdigest() + " (" + alpha[iii] + alpha[ii] + alpha[i] + ")"
+					print "Combinations Tried: " + str(c)
 				if (hashlib.sha1(alpha[iii] + alpha[ii] + alpha[i]).hexdigest() == x):
 					print "Success! Decrypted to: " + alpha[iii] + alpha[ii] + alpha[i]
 					if (((time.time() - startTime) % 60) < 1):
@@ -206,8 +221,9 @@ def decrypt(x, y):
 						iii += 1
 			# MD5
 			elif (hashType == 'md5'):
-				print "Trying: " + hashlib.md5(alpha[iii] + alpha[ii] + alpha[i]).hexdigest() + " (" + alpha[iii] + alpha[ii] + alpha[i] + ")"
-				print "Combinations Tried: " + str(c)
+				if skip_print == 0:
+					print "Trying: " + hashlib.md5(alpha[iii] + alpha[ii] + alpha[i]).hexdigest() + " (" + alpha[iii] + alpha[ii] + alpha[i] + ")"
+					print "Combinations Tried: " + str(c)
 				if (hashlib.md5(alpha[iii] + alpha[ii] + alpha[i]).hexdigest() == x):
 					print "Success! Decrypted to: " + alpha[iii] + alpha[ii] + alpha[i]
 					if (((time.time() - startTime) % 60) < 1):
@@ -224,6 +240,8 @@ def decrypt(x, y):
 					if (ii == len(alpha)):
 						ii = 0
 						iii += 1
+			skip_print += 1
+			skip_print %= 200000
 		if (complete == 0):
 			i = 0
 			ii = 0
@@ -231,14 +249,17 @@ def decrypt(x, y):
 			startPoint = 3
 	# 4 character case
 	if (startPoint == 3):
+		skip_print = 0
 		while (iiii < len(alpha)):
 			c += 1
-			os.system('cls')
-			print "Decrypting: " + x
+			if skip_print == 0:
+				os.system('cls')
+				print "Decrypting: " + x
 			# SHA-1
 			if (hashType == 'sha1'):
-				print "Trying: " + hashlib.sha1(alpha[iiii] + alpha[iii] + alpha[ii] + alpha[i]).hexdigest() + " (" + alpha[iiii] + alpha[iii] + alpha[ii] + alpha[i] + ")"
-				print "Combinations Tried: " + str(c)
+				if skip_print == 0:
+					print "Trying: " + hashlib.sha1(alpha[iiii] + alpha[iii] + alpha[ii] + alpha[i]).hexdigest() + " (" + alpha[iiii] + alpha[iii] + alpha[ii] + alpha[i] + ")"
+					print "Combinations Tried: " + str(c)
 				if (hashlib.sha1(alpha[iiii] + alpha[iii] + alpha[ii] + alpha[i]).hexdigest() == x):
 					print "Success! Decrypted to: " + alpha[iiii] + alpha[iii] + alpha[ii] + alpha[i]
 					if (((time.time() - startTime) % 60) < 1):
@@ -260,8 +281,9 @@ def decrypt(x, y):
 						iiii += 1
 			# MD5
 			elif (hashType == 'md5'):
-				print "Trying: " + hashlib.md5(alpha[iii] + alpha[ii] + alpha[i]).hexdigest() + " (" + alpha[iiii] + alpha[iii] + alpha[ii] + alpha[i] + ")"
-				print "Combinations Tried: " + str(c)
+				if skip_print == 0:
+					print "Trying: " + hashlib.md5(alpha[iii] + alpha[ii] + alpha[i]).hexdigest() + " (" + alpha[iiii] + alpha[iii] + alpha[ii] + alpha[i] + ")"
+					print "Combinations Tried: " + str(c)
 				if (hashlib.md5(alpha[iiii] + alpha[iii] + alpha[ii] + alpha[i]).hexdigest() == x):
 					print "Success! Decrypted to: " + alpha[iiii] + alpha[iii] + alpha[ii] + alpha[i]
 					if (((time.time() - startTime) % 60) < 1):
@@ -281,6 +303,8 @@ def decrypt(x, y):
 					if (iii == len(alpha)):
 						iii = 0
 						iiii += 1
+			skip_print += 1
+			skip_print %= 200000
 		if (complete == 0):
 			i = 0
 			ii = 0
@@ -289,14 +313,17 @@ def decrypt(x, y):
 			startPoint = 4
 	# 5 character case
 	if (startPoint == 4):
+		skip_print = 0
 		while (iiiii < len(alpha)):
 			c += 1
-			os.system('cls')
-			print "Decrypting: " + x
+			if skip_print == 0:
+				os.system('cls')
+				print "Decrypting: " + x
 			# SHA-1
 			if (hashType == 'sha1'):
-				print "Trying: " + hashlib.sha1(alpha[iiiii] + alpha[iiii] + alpha[iii] + alpha[ii] + alpha[i]).hexdigest() + " (" + alpha[iiiii] + alpha[iiii] + alpha[iii] + alpha[ii] + alpha[i] + ")"
-				print "Combinations Tried: " + str(c)
+				if skip_print == 0:
+					print "Trying: " + hashlib.sha1(alpha[iiiii] + alpha[iiii] + alpha[iii] + alpha[ii] + alpha[i]).hexdigest() + " (" + alpha[iiiii] + alpha[iiii] + alpha[iii] + alpha[ii] + alpha[i] + ")"
+					print "Combinations Tried: " + str(c)
 				if (hashlib.sha1(alpha[iiiii] + alpha[iiii] + alpha[iii] + alpha[ii] + alpha[i]).hexdigest() == x):
 					print "Success! Decrypted to: " + alpha[iiiii] + alpha[iiii] + alpha[iii] + alpha[ii] + alpha[i]
 					if (((time.time() - startTime) % 60) < 1):
@@ -321,8 +348,9 @@ def decrypt(x, y):
 						iiiii += 1
 			# MD5
 			elif (hashType == 'md5'):
-				print "Trying: " + hashlib.md5(alpha[iiiii] + alpha[iii] + alpha[ii] + alpha[i]).hexdigest() + " (" + alpha[iiiii] + alpha[iiii] + alpha[iii] + alpha[ii] + alpha[i] + ")"
-				print "Combinations Tried: " + str(c)
+				if skip_print == 0:
+					print "Trying: " + hashlib.md5(alpha[iiiii] + alpha[iii] + alpha[ii] + alpha[i]).hexdigest() + " (" + alpha[iiiii] + alpha[iiii] + alpha[iii] + alpha[ii] + alpha[i] + ")"
+					print "Combinations Tried: " + str(c)
 				if (hashlib.md5(alpha[iiiii] + alpha[iiii] + alpha[iii] + alpha[ii] + alpha[i]).hexdigest() == x):
 					print "Success! Decrypted to: " + alpha[iiiii] + alpha[iiii] + alpha[iii] + alpha[ii] + alpha[i]
 					if (((time.time() - startTime) % 60) < 1):
@@ -345,6 +373,8 @@ def decrypt(x, y):
 					if (iiii == len(alpha)):
 						iiii = 0
 						iiiii += 1
+			skip_print += 1
+			skip_print %= 200000
 		if (complete == 0):
 			i = 0
 			ii = 0
@@ -354,14 +384,17 @@ def decrypt(x, y):
 			startPoint = 5
 	# 6 character case
 	if (startPoint == 5):
+		skip_print = 0
 		while (iiiiii < len(alpha)):
 			c += 1
-			os.system('cls')
-			print "Decrypting: " + x
+			if skip_print == 0:
+				os.system('cls')
+				print "Decrypting: " + x
 			# SHA-1
 			if (hashType == 'sha1'):
-				print "Trying: " + hashlib.sha1(alpha[iiiiii] + alpha[iiiii] + alpha[iiii] + alpha[iii] + alpha[ii] + alpha[i]).hexdigest() + " (" + alpha[iiiiii] + alpha[iiiii] + alpha[iiii] + alpha[iii] + alpha[ii] + alpha[i] + ")"
-				print "Combinations Tried: " + str(c)
+				if skip_print == 0:
+					print "Trying: " + hashlib.sha1(alpha[iiiiii] + alpha[iiiii] + alpha[iiii] + alpha[iii] + alpha[ii] + alpha[i]).hexdigest() + " (" + alpha[iiiiii] + alpha[iiiii] + alpha[iiii] + alpha[iii] + alpha[ii] + alpha[i] + ")"
+					print "Combinations Tried: " + str(c)
 				if (hashlib.sha1(alpha[iiiiii] + alpha[iiiii] + alpha[iiii] + alpha[iii] + alpha[ii] + alpha[i]).hexdigest() == x):
 					print "Success! Decrypted to: " + alpha[iiiiii] + alpha[iiiii] + alpha[iiii] + alpha[iii] + alpha[ii] + alpha[i]
 					if (((time.time() - startTime) % 60) < 1):
@@ -389,8 +422,9 @@ def decrypt(x, y):
 						iiiiii += 1
 			# MD5
 			elif (hashType == 'md5'):
-				print "Trying: " + hashlib.md5(alpha[iiiiii] + alpha[iiiii] + alpha[iii] + alpha[ii] + alpha[i]).hexdigest() + " (" + alpha[iiiiii] + alpha[iiiii] + alpha[iiii] + alpha[iii] + alpha[ii] + alpha[i] + ")"
-				print "Combinations Tried: " + str(c)
+				if skip_print == 0:
+					print "Trying: " + hashlib.md5(alpha[iiiiii] + alpha[iiiii] + alpha[iii] + alpha[ii] + alpha[i]).hexdigest() + " (" + alpha[iiiiii] + alpha[iiiii] + alpha[iiii] + alpha[iii] + alpha[ii] + alpha[i] + ")"
+					print "Combinations Tried: " + str(c)
 				if (hashlib.md5(alpha[iiiiii] + alpha[iiiii] + alpha[iiii] + alpha[iii] + alpha[ii] + alpha[i]).hexdigest() == x):
 					print "Success! Decrypted to: " + alpha[iiiiii] + alpha[iiiii] + alpha[iiii] + alpha[iii] + alpha[ii] + alpha[i]
 					if (((time.time() - startTime) % 60) < 1):
@@ -416,6 +450,8 @@ def decrypt(x, y):
 					if (iiiii == len(alpha)):
 						iiiii = 0
 						iiiiii += 1
+			skip_print += 1
+			skip_print %= 200000
 
 # User Interface and console input
 # Get hash type and value from user, exit if invalid
