@@ -282,7 +282,7 @@ def decrypt(x, y):
 			# MD5
 			elif (hashType == 'md5'):
 				if skip_print == 0:
-					print "Trying: " + hashlib.md5(alpha[iii] + alpha[ii] + alpha[i]).hexdigest() + " (" + alpha[iiii] + alpha[iii] + alpha[ii] + alpha[i] + ")"
+					print "Trying: " + hashlib.md5(alpha[iiii] + alpha[iii] + alpha[ii] + alpha[i]).hexdigest() + " (" + alpha[iiii] + alpha[iii] + alpha[ii] + alpha[i] + ")"
 					print "Combinations Tried: " + str(c)
 				if (hashlib.md5(alpha[iiii] + alpha[iii] + alpha[ii] + alpha[i]).hexdigest() == x):
 					print "Success! Decrypted to: " + alpha[iiii] + alpha[iii] + alpha[ii] + alpha[i]
@@ -349,7 +349,7 @@ def decrypt(x, y):
 			# MD5
 			elif (hashType == 'md5'):
 				if skip_print == 0:
-					print "Trying: " + hashlib.md5(alpha[iiiii] + alpha[iii] + alpha[ii] + alpha[i]).hexdigest() + " (" + alpha[iiiii] + alpha[iiii] + alpha[iii] + alpha[ii] + alpha[i] + ")"
+					print "Trying: " + hashlib.md5(alpha[iiiii] + alpha[iiii] + alpha[iii] + alpha[ii] + alpha[i]).hexdigest() + " (" + alpha[iiiii] + alpha[iiii] + alpha[iii] + alpha[ii] + alpha[i] + ")"
 					print "Combinations Tried: " + str(c)
 				if (hashlib.md5(alpha[iiiii] + alpha[iiii] + alpha[iii] + alpha[ii] + alpha[i]).hexdigest() == x):
 					print "Success! Decrypted to: " + alpha[iiiii] + alpha[iiii] + alpha[iii] + alpha[ii] + alpha[i]
@@ -423,7 +423,7 @@ def decrypt(x, y):
 			# MD5
 			elif (hashType == 'md5'):
 				if skip_print == 0:
-					print "Trying: " + hashlib.md5(alpha[iiiiii] + alpha[iiiii] + alpha[iii] + alpha[ii] + alpha[i]).hexdigest() + " (" + alpha[iiiiii] + alpha[iiiii] + alpha[iiii] + alpha[iii] + alpha[ii] + alpha[i] + ")"
+					print "Trying: " + hashlib.md5(alpha[iiiiii] + alpha[iiiii] + alpha[iiii] + alpha[iii] + alpha[ii] + alpha[i]).hexdigest() + " (" + alpha[iiiiii] + alpha[iiiii] + alpha[iiii] + alpha[iii] + alpha[ii] + alpha[i] + ")"
 					print "Combinations Tried: " + str(c)
 				if (hashlib.md5(alpha[iiiiii] + alpha[iiiii] + alpha[iiii] + alpha[iii] + alpha[ii] + alpha[i]).hexdigest() == x):
 					print "Success! Decrypted to: " + alpha[iiiiii] + alpha[iiiii] + alpha[iiii] + alpha[iii] + alpha[ii] + alpha[i]
