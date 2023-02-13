@@ -16,9 +16,5 @@ The resulting function(the md5 one) will give something you along the lines of: 
 Copy the text/numbers only, not the '' marks and paste it in to this program when asked.
 This is a simple hash that can be solved quickly, try it out!
 
-*** Contact ***
-I'm open to any feature suggestions/bug reports so feel free to contact me.
-Email: gedarovich@hotmail.com
-
 *** Latest Updates (2/17/12)***
 - Performance improvements (thanks to wernight)!
